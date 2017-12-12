@@ -25,8 +25,9 @@ public class TimeUtil {
 	 * @return
 	 */
 	public static String dateToStr_yyyyMMddHHmmss(Date date) {
-		if (date == null)
+		if (date == null) {
 			return null;
+		}
 		String str = null;
 		DateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 		str = format.format(date);
@@ -40,8 +41,9 @@ public class TimeUtil {
 	 * @return
 	 */
 	public static String dateToStr_yyyyMMdd(Date date) {
-		if (date == null)
+		if (date == null) {
 			return null;
+		}
 		String str = null;
 		DateFormat format = new SimpleDateFormat("yyyyMMdd");
 		str = format.format(date);
@@ -55,8 +57,9 @@ public class TimeUtil {
 	 * @return
 	 */
 	public static Date strToDate_yyyyMMdd(String str) {
-		if (StringUtil.isnull(str))
+		if (StringUtil.isnull(str)) {
 			return null;
+		}
 		DateFormat format = new SimpleDateFormat("yyyyMMdd");
 		Date date = null;
 		try {
@@ -75,8 +78,9 @@ public class TimeUtil {
 	 * @return
 	 */
 	public static Date strToDate_yyyyMMddHHmmss(String str) {
-		if (StringUtil.isnull(str))
+		if (StringUtil.isnull(str)) {
 			return null;
+		}
 		DateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = null;
 		try {
@@ -95,8 +99,9 @@ public class TimeUtil {
 	 * @return
 	 */
 	public static Date strToDate(String str) {
-		if (StringUtil.isnull(str))
+		if (StringUtil.isnull(str)) {
 			return null;
+		}
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date date = null;
 		try {

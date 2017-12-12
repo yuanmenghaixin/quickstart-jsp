@@ -40,8 +40,9 @@ public final class DateUtils extends org.apache.commons.lang3.time.DateUtils {
      */
     public static String formatDate(Date date,String pattern){
         String d=null;
-        if(date!=null)
-            d=DateFormatUtils.format(date, pattern);
+        if(date!=null) {
+            d = DateFormatUtils.format(date, pattern);
+        }
         return d;
     }
 

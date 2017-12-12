@@ -38,8 +38,9 @@ public class StringUtil {
 				("null")
 				|| str.trim().equals("")) {
 			return true;
-		} else
+		} else {
 			return false;
+		}
 	}
 	/**
 	 * 
@@ -48,8 +49,9 @@ public class StringUtil {
 	 * @return
 	 */
 	public static String splitNull(String str) {
-		if (isnull(str))
+		if (isnull(str)) {
 			return "";
+		}
 		return str;
 	}
 	
@@ -101,8 +103,9 @@ public class StringUtil {
 					.getConverter("GBK");
 			byte[] orig = toByte.convertAll(s.toCharArray());
 			char[] dest = new char[orig.length];
-			for (int i = 0; i < orig.length; i++)
+			for (int i = 0; i < orig.length; i++) {
 				dest[i] = (char) (orig[i] & 0xFF);
+			}
 			return new String(dest);
 		} catch (Exception e) {
 			System.out.println(e);
@@ -123,8 +126,9 @@ public class StringUtil {
 					.getConverter("UTF-8");
 			byte[] orig = toByte.convertAll(s.toCharArray());
 			char[] dest = new char[orig.length];
-			for (int i = 0; i < orig.length; i++)
+			for (int i = 0; i < orig.length; i++) {
 				dest[i] = (char) (orig[i] & 0xFF);
+			}
 			return new String(dest);
 		} catch (Exception e) {
 			System.out.println(e);
@@ -142,8 +146,9 @@ public class StringUtil {
 	public static String AsciiToChineseString(String s) {
 		char[] orig = s.toCharArray();
 		byte[] dest = new byte[orig.length];
-		for (int i = 0; i < orig.length; i++)
+		for (int i = 0; i < orig.length; i++) {
 			dest[i] = (byte) (orig[i] & 0xFF);
+		}
 		try {
 			ByteToCharConverter toChar = ByteToCharConverter
 					.getConverter("GBK");
@@ -271,8 +276,9 @@ public class StringUtil {
 	public static boolean checkNotNull(String str) {
 		boolean flag = false;
 
-		if (str != null && str.trim().length() != 0)
+		if (str != null && str.trim().length() != 0) {
 			flag = true;
+		}
 		return flag;
 	}
 
@@ -687,8 +693,9 @@ public class StringUtil {
 	public static boolean containsChinese(String str)
 			throws UnsupportedEncodingException {
 
-		if (str.length() < (str.getBytes()).length)
+		if (str.length() < (str.getBytes()).length) {
 			return true;
+		}
 
 		return false;
 
@@ -706,8 +713,9 @@ public class StringUtil {
 	}
 
 	public static boolean isEmpty(String str) {
-		if (str == null)
+		if (str == null) {
 			return true;
+		}
 		return "".equals(str.trim());
 	}
 
@@ -844,10 +852,11 @@ public class StringUtil {
 				buff.append(temp.toString() + " ");
 			}
 
-			if (buff.length() > 0)
+			if (buff.length() > 0) {
 				return buff.toString().substring(0, buff.length() - 1);
-			else
+			} else {
 				return str;
+			}
 		} else {
 			return "";
 		}
@@ -1123,10 +1132,10 @@ public class StringUtil {
 		return str;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String str = "罗泽a军 Luozejun";
 		System.out.println(getByteLength(str));
 		System.out.println(getByteStr(str, 6));
 
-	}
+	}*/
 }

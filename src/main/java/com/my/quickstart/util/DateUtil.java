@@ -67,8 +67,9 @@ public class DateUtil {
 	public static String getDateLong(Date date) {
 		String nowDate = "";
 		try {
-			if (date != null)
+			if (date != null) {
 				nowDate = sdfLong.format(date);
+			}
 			return nowDate;
 		} catch (Exception e) {
 			System.out.println("Error at getDate:" + e.getMessage());
@@ -85,8 +86,9 @@ public class DateUtil {
 	public static String getDateLongCn(Date date) {
 		String nowDate = "";
 		try {
-			if (date != null)
+			if (date != null) {
 				nowDate = sdfLongCn.format(date);
+			}
 			return nowDate;
 		} catch (Exception e) {
 			System.out.println("Error at getDate:" + e.getMessage());
@@ -102,8 +104,9 @@ public class DateUtil {
 	public static String getDateMD(Date date) {
 		String nowDate = "";
 		try {
-			if (date != null)
+			if (date != null) {
 				nowDate = sdfMd.format(date);
+			}
 			return nowDate;
 		} catch (Exception e) {
 			System.out.println("Error at getDate:" + e.getMessage());
@@ -120,8 +123,9 @@ public class DateUtil {
 	public static String getDateShortLongTimeCn(Date date) {
 		String nowDate = "";
 		try {
-			if (date != null)
+			if (date != null) {
 				nowDate = sdfShortLongTimePlusCn.format(date);
+			}
 			return nowDate;
 		} catch (Exception e) {
 			System.out.println("Error at getDate:" + e.getMessage());
@@ -138,8 +142,9 @@ public class DateUtil {
 	public static String getDateUS(Date date) {
 		String nowDate = "";
 		try {
-			if (date != null)
+			if (date != null) {
 				nowDate = sdfLongU.format(date);
+			}
 			return nowDate;
 		} catch (Exception e) {
 			System.out.println("Error at getDate:" + e.getMessage());
@@ -156,8 +161,9 @@ public class DateUtil {
 	public static String getDateUSShort(Date date) {
 		String nowDate = "";
 		try {
-			if (date != null)
+			if (date != null) {
 				nowDate = sdfShortU.format(date);
+			}
 			return nowDate;
 		} catch (Exception e) {
 			System.out.println("Error at getDate:" + e.getMessage());
@@ -260,8 +266,9 @@ public class DateUtil {
 	 * @throws java.lang.Exception
 	 */
 	public static String getPlusTime(Date date) throws Exception {
-		if (date == null)
+		if (date == null) {
 			return null;
+		}
 		try {
 			String nowDate = sdfLongTimePlus.format(date);
 			return nowDate;
@@ -278,8 +285,9 @@ public class DateUtil {
 	 */
 	public static String getPlusTime2(Date date) {
 
-		if (date == null)
+		if (date == null) {
 			return null;
+		}
 		try {
 			String nowDate = sdfLongTimePlus.format(date);
 			return nowDate;
@@ -552,12 +560,13 @@ public class DateUtil {
 		Calendar cal = Calendar.getInstance();
 		String currentYear = (new Integer(cal.get(Calendar.YEAR))).toString();
 		String currentMonth = null;
-		if (cal.get(Calendar.MONTH) < 9)
+		if (cal.get(Calendar.MONTH) < 9) {
 			currentMonth = "0"
 					+ (new Integer(cal.get(Calendar.MONTH) + 1)).toString();
-		else
+		} else {
 			currentMonth = (new Integer(cal.get(Calendar.MONTH) + 1))
 					.toString();
+		}
 		return (currentYear + currentMonth);
 	}
 
@@ -770,26 +779,33 @@ public class DateUtil {
 	 * @return 转换得到的日期
 	 */
 	public static Date stringToDate(String strDate, String oracleFormat) {
-		if (strDate == null)
+		if (strDate == null) {
 			return null;
+		}
 		Hashtable h = new Hashtable();
 		String javaFormat = new String();
 		String s = oracleFormat.toLowerCase();
-		if (s.indexOf("yyyy") != -1)
+		if (s.indexOf("yyyy") != -1) {
 			h.put(new Integer(s.indexOf("yyyy")), "yyyy");
-		else if (s.indexOf("yy") != -1)
+		} else if (s.indexOf("yy") != -1) {
 			h.put(new Integer(s.indexOf("yy")), "yy");
-		if (s.indexOf("mm") != -1)
+		}
+		if (s.indexOf("mm") != -1) {
 			h.put(new Integer(s.indexOf("mm")), "MM");
+		}
 
-		if (s.indexOf("dd") != -1)
+		if (s.indexOf("dd") != -1) {
 			h.put(new Integer(s.indexOf("dd")), "dd");
-		if (s.indexOf("hh24") != -1)
+		}
+		if (s.indexOf("hh24") != -1) {
 			h.put(new Integer(s.indexOf("hh24")), "HH");
-		if (s.indexOf("mi") != -1)
+		}
+		if (s.indexOf("mi") != -1) {
 			h.put(new Integer(s.indexOf("mi")), "mm");
-		if (s.indexOf("ss") != -1)
+		}
+		if (s.indexOf("ss") != -1) {
 			h.put(new Integer(s.indexOf("ss")), "ss");
+		}
 
 		int intStart = 0;
 		while (s.indexOf("-", intStart) != -1) {
@@ -819,18 +835,24 @@ public class DateUtil {
 			intStart++;
 		}
 
-		if (s.indexOf("年") != -1)
+		if (s.indexOf("年") != -1) {
 			h.put(new Integer(s.indexOf("年")), "年");
-		if (s.indexOf("月") != -1)
+		}
+		if (s.indexOf("月") != -1) {
 			h.put(new Integer(s.indexOf("月")), "月");
-		if (s.indexOf("日") != -1)
+		}
+		if (s.indexOf("日") != -1) {
 			h.put(new Integer(s.indexOf("日")), "日");
-		if (s.indexOf("时") != -1)
+		}
+		if (s.indexOf("时") != -1) {
 			h.put(new Integer(s.indexOf("时")), "时");
-		if (s.indexOf("分") != -1)
+		}
+		if (s.indexOf("分") != -1) {
 			h.put(new Integer(s.indexOf("分")), "分");
-		if (s.indexOf("秒") != -1)
+		}
+		if (s.indexOf("秒") != -1) {
 			h.put(new Integer(s.indexOf("秒")), "秒");
+		}
 
 		int i = 0;
 		while (h.size() != 0) {
@@ -838,8 +860,9 @@ public class DateUtil {
 			int n = 0;
 			while (e.hasMoreElements()) {
 				i = ((Integer) e.nextElement()).intValue();
-				if (i >= n)
+				if (i >= n) {
 					n = i;
+				}
 			}
 			String temp = (String) h.get(new Integer(n));
 			h.remove(new Integer(n));
@@ -869,26 +892,33 @@ public class DateUtil {
 	 * @return 按指定的日期格式转换后的日期字符串
 	 */
 	public static String dateToString(Date d, String format) {
-		if (d == null)
+		if (d == null) {
 			return "";
+		}
 		Hashtable h = new Hashtable();
 		String javaFormat = new String();
 		String s = format.toLowerCase();
-		if (s.indexOf("yyyy") != -1)
+		if (s.indexOf("yyyy") != -1) {
 			h.put(new Integer(s.indexOf("yyyy")), "yyyy");
-		else if (s.indexOf("yy") != -1)
+		} else if (s.indexOf("yy") != -1) {
 			h.put(new Integer(s.indexOf("yy")), "yy");
-		if (s.indexOf("mm") != -1)
+		}
+		if (s.indexOf("mm") != -1) {
 			h.put(new Integer(s.indexOf("mm")), "MM");
+		}
 
-		if (s.indexOf("dd") != -1)
+		if (s.indexOf("dd") != -1) {
 			h.put(new Integer(s.indexOf("dd")), "dd");
-		if (s.indexOf("hh24") != -1)
+		}
+		if (s.indexOf("hh24") != -1) {
 			h.put(new Integer(s.indexOf("hh24")), "HH");
-		if (s.indexOf("mi") != -1)
+		}
+		if (s.indexOf("mi") != -1) {
 			h.put(new Integer(s.indexOf("mi")), "mm");
-		if (s.indexOf("ss") != -1)
+		}
+		if (s.indexOf("ss") != -1) {
 			h.put(new Integer(s.indexOf("ss")), "ss");
+		}
 
 		int intStart = 0;
 		while (s.indexOf("-", intStart) != -1) {
@@ -918,18 +948,24 @@ public class DateUtil {
 			intStart++;
 		}
 
-		if (s.indexOf("年") != -1)
+		if (s.indexOf("年") != -1) {
 			h.put(new Integer(s.indexOf("年")), "年");
-		if (s.indexOf("月") != -1)
+		}
+		if (s.indexOf("月") != -1) {
 			h.put(new Integer(s.indexOf("月")), "月");
-		if (s.indexOf("日") != -1)
+		}
+		if (s.indexOf("日") != -1) {
 			h.put(new Integer(s.indexOf("日")), "日");
-		if (s.indexOf("时") != -1)
+		}
+		if (s.indexOf("时") != -1) {
 			h.put(new Integer(s.indexOf("时")), "时");
-		if (s.indexOf("分") != -1)
+		}
+		if (s.indexOf("分") != -1) {
 			h.put(new Integer(s.indexOf("分")), "分");
-		if (s.indexOf("秒") != -1)
+		}
+		if (s.indexOf("秒") != -1) {
 			h.put(new Integer(s.indexOf("秒")), "秒");
+		}
 
 		int i = 0;
 		while (h.size() != 0) {
@@ -937,8 +973,9 @@ public class DateUtil {
 			int n = 0;
 			while (e.hasMoreElements()) {
 				i = ((Integer) e.nextElement()).intValue();
-				if (i >= n)
+				if (i >= n) {
 					n = i;
+				}
 			}
 			String temp = (String) h.get(new Integer(n));
 			h.remove(new Integer(n));
@@ -961,26 +998,33 @@ public class DateUtil {
 	 * @return 按指定的日期格式转换后的日期字符串
 	 */
 	public static String getDate(Date d, String format) {
-		if (d == null)
+		if (d == null) {
 			return "";
+		}
 		Hashtable h = new Hashtable();
 		String javaFormat = new String();
 		String s = format.toLowerCase();
-		if (s.indexOf("yyyy") != -1)
+		if (s.indexOf("yyyy") != -1) {
 			h.put(new Integer(s.indexOf("yyyy")), "yyyy");
-		else if (s.indexOf("yy") != -1)
+		} else if (s.indexOf("yy") != -1) {
 			h.put(new Integer(s.indexOf("yy")), "yy");
-		if (s.indexOf("mm") != -1)
+		}
+		if (s.indexOf("mm") != -1) {
 			h.put(new Integer(s.indexOf("mm")), "MM");
+		}
 
-		if (s.indexOf("dd") != -1)
+		if (s.indexOf("dd") != -1) {
 			h.put(new Integer(s.indexOf("dd")), "dd");
-		if (s.indexOf("hh24") != -1)
+		}
+		if (s.indexOf("hh24") != -1) {
 			h.put(new Integer(s.indexOf("hh24")), "HH");
-		if (s.indexOf("mi") != -1)
+		}
+		if (s.indexOf("mi") != -1) {
 			h.put(new Integer(s.indexOf("mi")), "mm");
-		if (s.indexOf("ss") != -1)
+		}
+		if (s.indexOf("ss") != -1) {
 			h.put(new Integer(s.indexOf("ss")), "ss");
+		}
 
 		int intStart = 0;
 		while (s.indexOf("-", intStart) != -1) {
@@ -1010,18 +1054,24 @@ public class DateUtil {
 			intStart++;
 		}
 
-		if (s.indexOf("年") != -1)
+		if (s.indexOf("年") != -1) {
 			h.put(new Integer(s.indexOf("年")), "年");
-		if (s.indexOf("月") != -1)
+		}
+		if (s.indexOf("月") != -1) {
 			h.put(new Integer(s.indexOf("月")), "月");
-		if (s.indexOf("日") != -1)
+		}
+		if (s.indexOf("日") != -1) {
 			h.put(new Integer(s.indexOf("日")), "日");
-		if (s.indexOf("时") != -1)
+		}
+		if (s.indexOf("时") != -1) {
 			h.put(new Integer(s.indexOf("时")), "时");
-		if (s.indexOf("分") != -1)
+		}
+		if (s.indexOf("分") != -1) {
 			h.put(new Integer(s.indexOf("分")), "分");
-		if (s.indexOf("秒") != -1)
+		}
+		if (s.indexOf("秒") != -1) {
 			h.put(new Integer(s.indexOf("秒")), "秒");
+		}
 
 		int i = 0;
 		while (h.size() != 0) {
@@ -1029,8 +1079,9 @@ public class DateUtil {
 			int n = 0;
 			while (e.hasMoreElements()) {
 				i = ((Integer) e.nextElement()).intValue();
-				if (i >= n)
+				if (i >= n) {
 					n = i;
+				}
 			}
 			String temp = (String) h.get(new Integer(n));
 			h.remove(new Integer(n));
@@ -1194,15 +1245,17 @@ public class DateUtil {
 		int year = (new Integer(yearMonth.substring(0, 4))).intValue();
 		int month = (new Integer(yearMonth.substring(4, 6))).intValue();
 		month = month + 1;
-		if (month <= 12 && month >= 10)
+		if (month <= 12 && month >= 10) {
 			return yearMonth.substring(0, 4) + (new Integer(month)).toString();
-		else if (month < 10)
+		} else if (month < 10) {
 			return yearMonth.substring(0, 4) + "0"
 					+ (new Integer(month)).toString();
-		else
+		} else
 			// if(month>12)
+		{
 			return (new Integer(year + 1)).toString() + "0"
 					+ (new Integer(month - 12)).toString();
+		}
 
 	}
 
@@ -1221,10 +1274,11 @@ public class DateUtil {
 		month = month + addMonth;
 		year = year + month / 12;
 		month = month % 12;
-		if (month <= 12 && month >= 10)
+		if (month <= 12 && month >= 10) {
 			return year + (new Integer(month)).toString();
-		else
+		} else {
 			return year + "0" + (new Integer(month)).toString();
+		}
 
 	}
 
@@ -1239,15 +1293,17 @@ public class DateUtil {
 		int year = (new Integer(yearMonth.substring(0, 4))).intValue();
 		int month = (new Integer(yearMonth.substring(4, 6))).intValue();
 		month = month - 1;
-		if (month >= 10)
+		if (month >= 10) {
 			return yearMonth.substring(0, 4) + (new Integer(month)).toString();
-		else if (month > 0 && month < 10)
+		} else if (month > 0 && month < 10) {
 			return yearMonth.substring(0, 4) + "0"
 					+ (new Integer(month)).toString();
-		else
+		} else
 			// if(month>12)
+		{
 			return (new Integer(year - 1)).toString()
 					+ (new Integer(month + 12)).toString();
+		}
 
 	}
 
@@ -1267,15 +1323,17 @@ public class DateUtil {
 		String temp3 = s1.substring(4, 6);
 		String temp4 = s2.substring(4, 6);
 
-		if (Integer.parseInt(temp1) > Integer.parseInt(temp2))
+		if (Integer.parseInt(temp1) > Integer.parseInt(temp2)) {
 			return true;
-		else if (Integer.parseInt(temp1) == Integer.parseInt(temp2)) {
-			if (Integer.parseInt(temp3) >= Integer.parseInt(temp4))
+		} else if (Integer.parseInt(temp1) == Integer.parseInt(temp2)) {
+			if (Integer.parseInt(temp3) >= Integer.parseInt(temp4)) {
 				return true;
-			else
+			} else {
 				return false;
-		} else
+			}
+		} else {
 			return false;
+		}
 	}
 
 	/**
@@ -1294,15 +1352,17 @@ public class DateUtil {
 		String temp3 = s1.substring(4, 6);
 		String temp4 = s2.substring(4, 6);
 
-		if (Integer.parseInt(temp1) > Integer.parseInt(temp2))
+		if (Integer.parseInt(temp1) > Integer.parseInt(temp2)) {
 			return true;
-		else if (Integer.parseInt(temp1) == Integer.parseInt(temp2)) {
-			if (Integer.parseInt(temp3) > Integer.parseInt(temp4))
+		} else if (Integer.parseInt(temp1) == Integer.parseInt(temp2)) {
+			if (Integer.parseInt(temp3) > Integer.parseInt(temp4)) {
 				return true;
-			else
+			} else {
 				return false;
-		} else
+			}
+		} else {
 			return false;
+		}
 	}
 
 	/**
@@ -1361,9 +1421,9 @@ public class DateUtil {
 			int intMonthEnd;
 			String strOut;
 			if (strDateBegin.equals("") || strDateEnd.equals("")
-					|| strDateBegin.length() != 6 || strDateEnd.length() != 6)
+					|| strDateBegin.length() != 6 || strDateEnd.length() != 6) {
 				strOut = "";
-			else {
+			} else {
 				intMonthBegin = Integer.parseInt(strDateBegin.substring(0, 4))
 						* 12 + Integer.parseInt(strDateBegin.substring(4, 6));
 				intMonthEnd = Integer.parseInt(strDateEnd.substring(0, 4)) * 12
@@ -1426,11 +1486,13 @@ public class DateUtil {
 	 * @return String
 	 */
 	public static String getYearAndMonth(String yearMonth) {
-		if (null == yearMonth)
+		if (null == yearMonth) {
 			return "";
+		}
 		String ym = yearMonth.trim();
-		if (6 != ym.length())
+		if (6 != ym.length()) {
 			return ym;
+		}
 		String year = ym.substring(0, 4);
 		String month = ym.substring(4);
 		return new StringBuffer(year).append("年").append(month).append("月")
@@ -1476,11 +1538,13 @@ public class DateUtil {
 	 * @return 返回年月型格式的日期
 	 */
 	public static String getYearMonthByMonth(String month) {
-		if (null == month)
+		if (null == month) {
 			return null;
+		}
 		String ym = month.trim();
-		if (6 != ym.length())
+		if (6 != ym.length()) {
 			return ym;
+		}
 		String year = ym.substring(0, 4);
 		String month1 = ym.substring(4);
 		return new StringBuffer(year).append("年").append(month).append("月")
@@ -2069,8 +2133,9 @@ public class DateUtil {
 	}
 
 	public static Date getEndOfDay(Date day, Calendar cal) {
-		if (day == null)
+		if (day == null) {
 			day = new Date();
+		}
 		cal.setTime(day);
 		cal.set(Calendar.HOUR_OF_DAY, cal.getMaximum(Calendar.HOUR_OF_DAY));
 		cal.set(Calendar.MINUTE, cal.getMaximum(Calendar.MINUTE));
@@ -2095,8 +2160,9 @@ public class DateUtil {
 	 * midnight (00m 00h 00s)
 	 */
 	public static Date getStartOfDay(Date day, Calendar cal) {
-		if (day == null)
+		if (day == null) {
 			day = new Date();
+		}
 		cal.setTime(day);
 		cal.set(Calendar.HOUR_OF_DAY, cal.getMinimum(Calendar.HOUR_OF_DAY));
 		cal.set(Calendar.MINUTE, cal.getMinimum(Calendar.MINUTE));
@@ -2111,8 +2177,9 @@ public class DateUtil {
 	 * 12h 00s)
 	 */
 	public static Date getNoonOfDay(Date day, Calendar cal) {
-		if (day == null)
+		if (day == null) {
 			day = new Date();
+		}
 		cal.setTime(day);
 		cal.set(Calendar.HOUR_OF_DAY, 12);
 		cal.set(Calendar.MINUTE, cal.getMinimum(Calendar.MINUTE));
@@ -2141,13 +2208,15 @@ public class DateUtil {
 
 	// -----------------------------------------------------------------------
 	public static Date parseFromFormats(String aValue) {
-		if (StringUtil.isEmpty(aValue))
+		if (StringUtil.isEmpty(aValue)) {
 			return null;
+		}
 
 		// get DateUtil's formats
 		SimpleDateFormat formats[] = DateUtil.getFormats();
-		if (formats == null)
+		if (formats == null) {
 			return null;
+		}
 
 		// iterate over the array and parse
 		Date myDate = null;
@@ -2167,13 +2236,15 @@ public class DateUtil {
 
 	// -----------------------------------------------------------------------
 	public static java.sql.Timestamp parseTimestampFromFormats(String aValue) {
-		if (StringUtil.isEmpty(aValue))
+		if (StringUtil.isEmpty(aValue)) {
 			return null;
+		}
 
 		// call the regular Date formatter
 		Date myDate = DateUtil.parseFromFormats(aValue);
-		if (myDate != null)
-			return new java.sql.Timestamp(myDate.getTime());
+		if (myDate != null) {
+			return new Timestamp(myDate.getTime());
+		}
 		return null;
 	}
 
@@ -2207,8 +2278,9 @@ public class DateUtil {
 	 **/
 	public static String formatDateString(String aString,
 			SimpleDateFormat aFormat) {
-		if (StringUtil.isEmpty(aString) || aFormat == null)
+		if (StringUtil.isEmpty(aString) || aFormat == null) {
 			return "";
+		}
 		try {
 			java.sql.Timestamp aDate = parseTimestampFromFormats(aString);
 			if (aDate != null) {
@@ -2365,8 +2437,9 @@ public class DateUtil {
 	// -----------------------------------------------------------------------
 	// This is a hack, but it seems to work
 	public static String formatIso8601(Date date) {
-		if (date == null)
+		if (date == null) {
 			return "";
+		}
 
 		// Add a colon 2 chars before the end of the string
 		// to make it a valid ISO-8601 date.
@@ -2569,7 +2642,7 @@ public class DateUtil {
 		return sdfLongTimePlus.parse(sdfLongTimePlus.format(date));
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			System.out.println(DateUtil.toDayToStr("yyyy年MM月dd日"));
 
@@ -2625,7 +2698,7 @@ public class DateUtil {
 			ex.printStackTrace();
 		}
 	}
-
+*/
 	/**
 	 * 
 	 * <br>
@@ -2756,8 +2829,9 @@ public class DateUtil {
 		cal.setTime(dt);
 
 		int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
-		if (w < 0)
+		if (w < 0) {
 			w = 0;
+		}
 
 		return weekDays[w];
 	}

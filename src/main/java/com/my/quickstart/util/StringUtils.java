@@ -324,9 +324,9 @@ public final class StringUtils extends org.apache.commons.lang3.StringUtils {
         return result;
     }
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String nick = "abc!def";
 		System.out.println(toDBC(nick));
 		System.out.println(hasSpecialCharacter(nick));
-	}
+	}*/
 }
