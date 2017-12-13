@@ -94,10 +94,10 @@ CREATE TABLE `t_user_account` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户登陆表';
 
 -- ----------------------------
--- Records of t_user_account
+-- Records of t_user_account 密码123456
 -- ----------------------------
-INSERT INTO `t_user_account` VALUES ('1', 'admin', 'admin', '$2a$12$g/jlazodA3G7LZgchwOqm.BRraM61j3HnjNi055molmwStosghyXm', '13100000000', '123@163.com', '12345678', '2015-11-16 15:40:17', '127.0.0.1', '1', '1', '1', '1');
-INSERT INTO `t_user_account` VALUES ('2', 'asdf', 'asdf', '$2a$12$rSR.JHX9fpzq5llX32SgwOTS36XFuZFo6dMlS6th4JzA7em23fP7C', 'asdfas', null, null, null, null, '0', '0', '0', '0');
+INSERT INTO `t_user_account` VALUES ('1', 'admin', 'admin', '$2a$12$7fr3c7PKCuqTsW3EjNBaz.Dc2tlEMcr07dkT1TILJWQHMFnqPMmRG', '13100000000', '123@163.com', '12345678', '2015-11-16 15:40:17', '127.0.0.1', '1', '1', '1', '1');
+INSERT INTO `t_user_account` VALUES ('2', 'asdf', 'asdf', '$2a$12$7fr3c7PKCuqTsW3EjNBaz.Dc2tlEMcr07dkT1TILJWQHMFnqPMmRG', 'asdfas', null, null, null, null, '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for t_user_account_related_group

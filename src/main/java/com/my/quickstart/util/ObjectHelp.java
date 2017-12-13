@@ -14,10 +14,12 @@ import java.util.Set;
 public class ObjectHelp {
 
 	private final static boolean isEmptyImpl(Object obj) {
-		if (obj == null)
+		if (obj == null) {
 			return true;
-		if (obj instanceof String)
+		}
+		if (obj instanceof String) {
 			return "".equals(((String) obj).trim());
+		}
 		if (obj instanceof Map)
 			return ((Map<?, ?>) obj).isEmpty();
 		if (obj instanceof Collection)

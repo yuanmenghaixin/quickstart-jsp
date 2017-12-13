@@ -35,8 +35,8 @@ public class TestUserAccountService extends BaseTest {
 	@Test
 	public void addUserAccount(){
 		UserAccount userAccount=new UserAccount();
-		userAccount.setUsername("admin");
-		userAccount.setNickname("admin");
+		userAccount.setUsername("admin1");
+		userAccount.setNickname("admin1");
 		userAccount.setMobile("13100000000");
 		userAccount.setEmail("123@163.com");
 		userAccount.setQq("12345678");
